@@ -29,12 +29,30 @@
           </div>
       </div>
         <div v-if="status.success && status.result.length > 0">
-          <div class="alert alert-success" role="alert">
-            <strong>成功！</strong> 您的个人信息已泄露，请及时联系相关部门。
+          <div class="alert alert-danger" role="alert">
+            <strong>您的个人信息已泄露，请及时联系相关部门。</strong>
           </div>
+          <div v-for="item in status.result">
+            <div class="alert alert-danger" role="alert">
+              <strong>{{item.name}}</strong>
+              <br>
+              <strong>姓名：</strong>{{item.name}}
+              <br>
+              <strong>身份证号：</strong>{{item.id}}
+              <br>
+              <strong>地址：</strong>{{item.place}}
+              <br>
+              <strong>性别：</strong>{{item.sex}}
+            </div>
     </div>
   </div>
+        <div v-if="status.success && status.result.length === 0">
+          <div class="alert-success" role="alert">
+            <strong>很幸运，您的信息并未泄露！</strong>
+          </div>
+        </div>
 </div>
+  </div>
   </div>
 </template>
 
