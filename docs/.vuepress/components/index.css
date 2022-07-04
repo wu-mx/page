@@ -1,0 +1,10 @@
+.card{
+    top: 200px;
+    margin: auto;
+    width: 70%;
+    max-width: 1500px;
+    min-width: 200px;
+    height: 30%;
+    max-height: 700px;
+    min-height: 200px;
+}

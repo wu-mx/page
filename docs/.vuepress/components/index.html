@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>数据泄露查询</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+    <link href="index.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">数据泄露查询</h1>
+        <p class="card-text">7月3日，上海某政企机构泄露了一批含有10亿公民个人信息的数据，其中有25万位公民的身份信息。您可以在此处查询您的个人信息有无泄露。</p>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" onkeyup = "this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" maxlength="5" placeholder="姓名">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" onkeyup = "value=value.replace(/[^\d]/g,'')" maxlength="1" placeholder="身份证第一位">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" onkeyup = "value=value.replace(/[^\d]/g,'')" maxlength="1" placeholder="身份证最后一位">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">查询</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
